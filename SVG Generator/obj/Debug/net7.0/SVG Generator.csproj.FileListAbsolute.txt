@@ -1,0 +1,15 @@
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\bin\Debug\net7.0\SVG Generator.exe
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\bin\Debug\net7.0\SVG Generator.deps.json
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\bin\Debug\net7.0\SVG Generator.runtimeconfig.json
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\bin\Debug\net7.0\SVG Generator.dll
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\bin\Debug\net7.0\SVG Generator.pdb
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.csproj.AssemblyReference.cache
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.AssemblyInfoInputs.cache
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.AssemblyInfo.cs
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.csproj.CoreCompileInputs.cache
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.dll
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\refint\SVG Generator.dll
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.pdb
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.genruntimeconfig.cache
+C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\ref\SVG Generator.dll
