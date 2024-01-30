@@ -61,8 +61,8 @@ string desOrdesSquare(DrawFunctions df, double x, double y, double width, double
         points[2] = rng.NextDouble() * x;
         points[3] = rng.NextDouble() * y;
         points[4] = rng.NextDouble() * x;
-        points[5] = rng.NextDouble() * x;
-        points[6] = rng.NextDouble() * y;
+        points[5] = rng.NextDouble() * y;
+        points[6] = rng.NextDouble() * x;
         points[7] = rng.NextDouble() * y;
         points[8] = points[0];
         points[9] = points[1];
