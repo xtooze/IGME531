@@ -2,7 +2,7 @@
 using SVGGenerator;
 
 //WriteSVG(new DrawFunctions(), "../../../Sainte-Victoire en Rouge.svg");
-WriteSVG(new DrawFunctions(), "../../../Sainte-Victoire en Rouge Circles.svg");
+WriteSVG(new DrawFunctions(), "../../../Des Ordes Test.svg");
 
 
 void WriteSVG(DrawFunctions df, string path)
@@ -33,7 +33,7 @@ void WriteSVG(DrawFunctions df, string path)
 
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 22, 30, 12));
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 50, 33, 12));
-
+        sw.WriteLine(desOrdesSquare(df, 10, 10, 10, 10));
 
 
         sw.WriteLine("</svg>");
@@ -53,9 +53,20 @@ string desOrdesSquare(DrawFunctions df, double x, double y, double width, double
     Random rng = new Random();
     int numSquares = rng.Next(1, 21);
     string squares = "";
-    for (int i = 0; i < numSquares; i++)
+    for (int i = 1; i == numSquares; i++)
     {
-        double[] points = { rng.NextDouble() * x, rng.NextDouble() * y };
+        double[] points = new double[10];
+        points[0] = rng.NextDouble() * x;
+        points[1] = rng.NextDouble() * y;
+        points[2] = rng.NextDouble() * x;
+        points[3] = rng.NextDouble() * y;
+        points[4] = rng.NextDouble() * x;
+        points[5] = rng.NextDouble() * x;
+        points[6] = rng.NextDouble() * y;
+        points[7] = rng.NextDouble() * y;
+        points[8] = points[0];
+        points[9] = points[1];
         squares += df.drawPolyline("black", "none", points);
     }
+    return df.group(squares);
 }

@@ -13,3 +13,6 @@ C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\r
 C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.pdb
 C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\SVG Generator.genruntimeconfig.cache
 C:\Users\xande\Desktop\RIT\2024 Spring\IGME 531\SVG Generator\obj\Debug\net7.0\ref\SVG Generator.dll
+\\banner.main.ad.rit.edu\students\xat7714\IGMProfile\Documents\IGME 531\repo\SVG Generator\obj\Debug\net7.0\SVG Generator.dll
+\\banner.main.ad.rit.edu\students\xat7714\IGMProfile\Documents\IGME 531\repo\SVG Generator\obj\Debug\net7.0\refint\SVG Generator.dll
+\\banner.main.ad.rit.edu\students\xat7714\IGMProfile\Documents\IGME 531\repo\SVG Generator\obj\Debug\net7.0\SVG Generator.pdb
