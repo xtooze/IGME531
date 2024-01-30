@@ -23,16 +23,18 @@ void WriteSVG(DrawFunctions df, string path)
         //sw.WriteLine(df.drawRect("#E84139", "#E84139", 12, 20, 20, 20, 43));
         //sw.WriteLine(df.drawRect("#E84139", "#E84139", 40, 23, 20, 20, -10));
 
-        sw.WriteLine(df.drawCircle("#BE2A2A", "#BE2A2A", 11, 45, 12));
-        sw.WriteLine(df.drawCircle("#6B2933", "#6B2933", 22, 17, 12));
-        sw.WriteLine(df.drawCircle("#BE2A2A", "#BE2A2A", 35, 17, 12));
-        sw.WriteLine(df.drawCircle("#6B2933", "#6B2933", 64, 52, 12));
-        sw.WriteLine(df.drawCircle("#6B2933", "#6B2933", 53, 53, 12));
-        sw.WriteLine(df.drawCircle("#BE2A2A", "#BE2A2A", 65, 68, 12));
-        sw.WriteLine(df.drawCircle("#E52523", "#E52523", 75, 70, 12));
+        //sw.WriteLine(df.drawCircle("#BE2A2A", "#BE2A2A", 11, 45, 12));
+        //sw.WriteLine(df.drawCircle("#6B2933", "#6B2933", 22, 17, 12));
+        //sw.WriteLine(df.drawCircle("#BE2A2A", "#BE2A2A", 35, 17, 12));
+        //sw.WriteLine(df.drawCircle("#6B2933", "#6B2933", 64, 52, 12));
+        //sw.WriteLine(df.drawCircle("#6B2933", "#6B2933", 53, 53, 12));
+        //sw.WriteLine(df.drawCircle("#BE2A2A", "#BE2A2A", 65, 68, 12));
+        //sw.WriteLine(df.drawCircle("#E52523", "#E52523", 75, 70, 12));
 
-        sw.WriteLine(df.drawCircle("#E84139", "#E84139", 22, 30, 12));
-        sw.WriteLine(df.drawCircle("#E84139", "#E84139", 50, 33, 12));
+        //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 22, 30, 12));
+        //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 50, 33, 12));
+
+
 
         sw.WriteLine("</svg>");
     }
@@ -43,5 +45,17 @@ void WriteSVG(DrawFunctions df, string path)
 	finally 
 	{
         sw.Close();
+    }
+}
+
+string desOrdesSquare(DrawFunctions df, double x, double y, double width, double height)
+{
+    Random rng = new Random();
+    int numSquares = rng.Next(1, 21);
+    string squares = "";
+    for (int i = 0; i < numSquares; i++)
+    {
+        double[] points = { rng.NextDouble() * x, rng.NextDouble() * y };
+        squares += df.drawPolyline("black", "none", points);
     }
 }

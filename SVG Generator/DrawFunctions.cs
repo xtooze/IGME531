@@ -42,6 +42,34 @@ namespace SVGGenerator
             return $"<polygon stroke=\"{stroke}\" fill=\"{fill}\" points=\"{pointsString}\"></polygon>";
         }
 
+        public string drawPolyline(string stroke, string fill, double[] points)
+        {
+            string pointsString = "";
+            for (int i = 0; i < points.Length; i++)
+            {
+                pointsString += points[i].ToString();
+                if (i % 2 == 0)
+                {
+                    pointsString += ",";
+                }
+                else
+                {
+                    pointsString += " ";
+                }
+            }
+            return $"<polyline stroke=\"{stroke}\" fill=\"{fill}\" points=\"{pointsString}\"></polyline>";
+        }
+
+        public string drawPath(string stroke, string fill, string commands)
+        {
+            return $"<path stroke=\"{stroke}\" fill=\"{fill}\" d={commands}></path>";
+        }
+
+        public string group(string shape)
+        {
+            return $"<g>{shape}</g>";
+        }
+
         public DrawFunctions()
         {
         }
