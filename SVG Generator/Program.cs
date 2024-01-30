@@ -53,6 +53,8 @@ string desOrdesSquare(DrawFunctions df, double x, double y, double width, double
     Random rng = new Random();
     int numSquares = rng.Next(1, 21);
     string squares = "";
+    double cx = x + width / 2;
+    double cy = y + height / 2;
     for (int i = 1; i == numSquares; i++)
     {
         double[] points = new double[10];
