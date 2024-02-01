@@ -1,16 +1,17 @@
 ﻿using System.IO;
 using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography.X509Certificates;
 using SVGGenerator;
 
 //WriteSVG(new DrawFunctions(), "../../../Sainte-Victoire en Rouge.svg");
-WriteSVG(new DrawFunctions(), "../../../Des Ordes Spirals.svg");
+WriteSVG(new DrawFunctions(), "../../../Schotter.svg");
 
 void WriteSVG(DrawFunctions df, string path)
 {
     StreamWriter sw = File.CreateText(path);
     try
     {
-        sw.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" height=\"100%\" viewBox=\"0 0 130 130\">");
+        sw.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" height=\"100%\" viewBox=\"0 0 300 300\">");
 
         //sw.WriteLine(df.drawRect("#BE2A2A", "#BE2A2A", 1, 35, 20, 20, 5));
         //sw.WriteLine(df.drawRect("#6B2933", "#6B2933", 12, 7, 20, 20, -20));
@@ -33,12 +34,20 @@ void WriteSVG(DrawFunctions df, string path)
 
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 22, 30, 12));
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 50, 33, 12));
-        for (int i = 0; i < 5; i++)
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    for (int j = 0; j < 13; j++)
+        //    {
+        //        //sw.WriteLine(desOrdesSquare(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .15));
+        //        sw.WriteLine(desOrdesSpiral(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .2));
+        //    }
+        //}
+
+        for (int j = 0; j < 24; j++)
         {
-            for (int j = 0; j < 13; j++)
+            for (int i = 0; i < 12; i++)
             {
-                //sw.WriteLine(desOrdesSquare(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .15));
-                sw.WriteLine(desOrdesSpiral(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .2));
+                sw.WriteLine(schotterRect(df, 0 + (i * 10), 0 + (j * 10), 10, 10, (double)i, (double)j));
             }
         }
 
@@ -149,4 +158,13 @@ string desOrdesSpiral(DrawFunctions df, double x, double y, double width, double
     }
     squares += df.drawPolyline("black", "none", allPoints);
     return df.group(squares);
+}
+
+string schotterRect(DrawFunctions df, double x, double y, double width, double height, double i, double j)
+{
+    Random rng = new Random();
+    string rect = df.drawRect("black", "none", x, y, width, height, 0);
+    rect = df.rotate(rect, rng.NextDouble() * (45 * (j / 23)), x + width / 2, y + height / 2);
+    rect = df.translate(rect, rng.NextDouble() * (10 * (j / 23) - -10 * (j / 23)) + -10 * (j / 23), rng.NextDouble() * (20 * (j / 23) - -20 * (j / 23)) + -10 * (j / 23));
+    return rect;
 }

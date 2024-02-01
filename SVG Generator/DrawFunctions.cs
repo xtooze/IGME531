@@ -70,6 +70,21 @@ namespace SVGGenerator
             return $"<g>{shape}</g>";
         }
 
+        public string translate(string shape, double x, double y)
+        {
+            return $"<g transform=\"translate({x} {y})\">{shape}</g>";
+        }
+
+        public string rotate(string shape, double angle, double x, double y)
+        {
+            return $"<g transform=\"rotate({angle} {x} {y})\">{shape}</g>";
+        }
+
+        public string scale(string shape, double x, double y)
+        {
+            return $"<g transform=\"scale({x} {y})\">{shape}</g>";
+        }
+
         public DrawFunctions()
         {
         }
