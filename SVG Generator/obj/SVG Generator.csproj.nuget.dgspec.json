@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\SVG Generator\\SVG Generator.csproj": {}
+    "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\SVG Generator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\SVG Generator\\SVG Generator.csproj": {
+    "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\SVG Generator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\SVG Generator\\SVG Generator.csproj",
+        "projectUniqueName": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\SVG Generator.csproj",
         "projectName": "SVG Generator",
-        "projectPath": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\SVG Generator\\SVG Generator.csproj",
+        "projectPath": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\SVG Generator.csproj",
         "packagesPath": "C:\\Users\\xande\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\SVG Generator\\obj\\",
+        "outputPath": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

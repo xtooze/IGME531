@@ -57,7 +57,7 @@ namespace SVGGenerator
                     pointsString += " ";
                 }
             }
-            return $"<polyline stroke=\"{stroke}\" fill=\"{fill}\" points=\"{pointsString}\"></polyline>";
+            return $"<polyline stroke=\"{stroke}\" fill=\"{fill}\" points=\"{pointsString}\" stroke-width=\".05\"></polyline>";
         }
 
         public string drawPath(string stroke, string fill, string commands)
