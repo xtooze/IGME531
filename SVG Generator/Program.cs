@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using SVGGenerator;
 
 //WriteSVG(new DrawFunctions(), "../../../Sainte-Victoire en Rouge.svg");
-WriteSVG(new DrawFunctions(), "../../../Schotter.svg");
+WriteSVG(new DrawFunctions(), "../../../Schotter Scale.svg");
 
 void WriteSVG(DrawFunctions df, string path)
 {
@@ -34,22 +34,23 @@ void WriteSVG(DrawFunctions df, string path)
 
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 22, 30, 12));
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 50, 33, 12));
-        //for (int i = 0; i < 5; i++)
-        //{
-        //    for (int j = 0; j < 13; j++)
-        //    {
-        //        //sw.WriteLine(desOrdesSquare(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .15));
-        //        sw.WriteLine(desOrdesSpiral(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .2));
-        //    }
-        //}
-
-        for (int j = 0; j < 24; j++)
+        
+        for (int i = 0; i < 5; i++)
         {
-            for (int i = 0; i < 12; i++)
+            for (int j = 0; j < 13; j++)
             {
-                sw.WriteLine(schotterRect(df, 0 + (i * 10), 0 + (j * 10), 10, 10, (double)i, (double)j));
+                //sw.WriteLine(desOrdesSquare(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .15));
+                sw.WriteLine(desOrdesSpiral(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .2));
             }
         }
+
+        //for (int j = 0; j < 24; j++)
+        //{
+        //    for (int i = 0; i < 12; i++)
+        //    {
+        //        sw.WriteLine(schotterRect(df, 0 + (i * 10), 0 + (j * 10), 10, 10, (double)i, (double)j));
+        //    }
+        //}
 
         sw.WriteLine("</svg>");
     }
