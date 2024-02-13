@@ -21,7 +21,7 @@ namespace SVGGenerator
 
         public string drawLine(string stroke, double x1, double y1, double x2, double y2)
         {
-            return $"<line stroke=\"{stroke}\" x1=\"{x1}\" y1=\"{y1}\" x2=\"{x2}\" y2=\"{y2}\"></line>";
+            return $"<line stroke=\"{stroke}\" x1=\"{x1}\" y1=\"{y1}\" x2=\"{x2}\" y2=\"{y2}\" stroke-width=\".05\"></line>";
         }
 
         public string drawPolygon(string stroke, string fill, double[] points)

@@ -3,15 +3,17 @@ using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography.X509Certificates;
 using SVGGenerator;
 
-//WriteSVG(new DrawFunctions(), "../../../Sainte-Victoire en Rouge.svg");
-WriteSVG(new DrawFunctions(), "../../../Schotter Scale.svg");
+Random rng = new Random();
+FastNoiseLite noise = new FastNoiseLite();
+float[,] noiseNums = noiseSetUp(noise, 100, 100, .05f);
+WriteSVG(new DrawFunctions(), "../../../Interuptions.svg");
 
 void WriteSVG(DrawFunctions df, string path)
 {
     StreamWriter sw = File.CreateText(path);
     try
     {
-        sw.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" height=\"100%\" viewBox=\"0 0 300 300\">");
+        sw.WriteLine("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" height=\"100%\" viewBox=\"0 0 100 100\">");
 
         //sw.WriteLine(df.drawRect("#BE2A2A", "#BE2A2A", 1, 35, 20, 20, 5));
         //sw.WriteLine(df.drawRect("#6B2933", "#6B2933", 12, 7, 20, 20, -20));
@@ -34,15 +36,15 @@ void WriteSVG(DrawFunctions df, string path)
 
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 22, 30, 12));
         //sw.WriteLine(df.drawCircle("#E84139", "#E84139", 50, 33, 12));
-        
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 13; j++)
-            {
-                //sw.WriteLine(desOrdesSquare(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .15));
-                sw.WriteLine(desOrdesSpiral(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .2));
-            }
-        }
+
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    for (int j = 0; j < 13; j++)
+        //    {
+        //        //sw.WriteLine(desOrdesSquare(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .15));
+        //        sw.WriteLine(desOrdesSpiral(df, 0 + (j * 10), 0 + (i * 10), 10, 10, .2));
+        //    }
+        //}
 
         //for (int j = 0; j < 24; j++)
         //{
@@ -51,6 +53,18 @@ void WriteSVG(DrawFunctions df, string path)
         //        sw.WriteLine(schotterRect(df, 0 + (i * 10), 0 + (j * 10), 10, 10, (double)i, (double)j));
         //    }
         //}
+
+        for (int i = 0; i < 100; i++)
+        {
+            for (int j = 0; j < 100; j++)
+            {
+                if (noiseNums[i,j] > .3)
+                {
+                    continue;
+                }
+                sw.WriteLine(df.rotate(df.drawLine("black", i, j, i + 2, j), rng.Next(0,360), (i+i+2)/2, j));
+            }
+        }
 
         sw.WriteLine("</svg>");
     }
@@ -168,4 +182,25 @@ string schotterRect(DrawFunctions df, double x, double y, double width, double h
     rect = df.rotate(rect, rng.NextDouble() * (45 * (j / 23)), x + width / 2, y + height / 2);
     rect = df.translate(rect, rng.NextDouble() * (10 * (j / 23) - -10 * (j / 23)) + -10 * (j / 23), rng.NextDouble() * (20 * (j / 23) - -20 * (j / 23)) + -10 * (j / 23));
     return rect;
+}
+
+float[,] noiseSetUp(FastNoiseLite noise, int x, int y, float f)
+{
+    int seed = rng.Next(int.MinValue, int.MaxValue);
+    Console.WriteLine(seed);
+    noise.SetSeed(seed);
+    noise.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
+    noise.SetFrequency(f);
+
+    float[,] noiseData = new float[x, y];
+
+    for (int i = 0; i < x; i++)
+    {
+        for (int j = 0; j < y; j++)
+        {
+            noiseData[i, j] = noise.GetNoise(i, j);
+        }
+    }
+
+    return noiseData;
 }
