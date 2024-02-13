@@ -6,7 +6,7 @@ using SVGGenerator;
 Random rng = new Random();
 FastNoiseLite noise = new FastNoiseLite();
 float[,] noiseNums = noiseSetUp(noise, 100, 100, .05f);
-WriteSVG(new DrawFunctions(), "../../../Interuptions.svg");
+WriteSVG(new DrawFunctions(), "../../../InteruptionsUniformLean.svg");
 
 void WriteSVG(DrawFunctions df, string path)
 {
@@ -54,15 +54,29 @@ void WriteSVG(DrawFunctions df, string path)
         //    }
         //}
 
+        //Interuptions - Basic
+        //for (int i = 0; i < 100; i++)
+        //{
+        //    for (int j = 0; j < 100; j++)
+        //    {
+        //        if (noiseNums[i,j] > .3)
+        //        {
+        //            continue;
+        //        }
+        //        sw.WriteLine(df.rotate(df.drawLine("black", i, j, i + 2, j), rng.Next(0,360), (i+i+2)/2, j));
+        //    }
+        //}
+
+        //Interuptions - Uniform Lean
         for (int i = 0; i < 100; i++)
         {
             for (int j = 0; j < 100; j++)
             {
-                if (noiseNums[i,j] > .3)
+                if (noiseNums[i, j] > .3)
                 {
                     continue;
                 }
-                sw.WriteLine(df.rotate(df.drawLine("black", i, j, i + 2, j), rng.Next(0,360), (i+i+2)/2, j));
+                sw.WriteLine(df.rotate(df.drawLine("black", i, j, i + 2, j), 360 * noiseNums[i, j], (i + i + 2) / 2, j));
             }
         }
 
