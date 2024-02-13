@@ -67,7 +67,7 @@ void WriteSVG(DrawFunctions df, string path)
         //    }
         //}
 
-        Interuptions - Uniform Lean
+        //Interuptions - Uniform Lean
         for (int i = 0; i < 100; i++)
         {
             for (int j = 0; j < 100; j++)
