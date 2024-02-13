@@ -67,7 +67,7 @@ void WriteSVG(DrawFunctions df, string path)
         //    }
         //}
 
-        //Interuptions - Uniform Lean
+        Interuptions - Uniform Lean
         for (int i = 0; i < 100; i++)
         {
             for (int j = 0; j < 100; j++)
@@ -76,7 +76,7 @@ void WriteSVG(DrawFunctions df, string path)
                 {
                     continue;
                 }
-                sw.WriteLine(df.rotate(df.drawLine("black", i, j, i + 2, j), 360 * noiseNums[i, j], (i + i + 2) / 2, j));
+                sw.WriteLine(df.rotate(df.drawLine($"rgb({0},{0},{0})", i, j, i + 2, j), 360 * noiseNums[i, j], (i + i + 2) / 2, j));
             }
         }
 
