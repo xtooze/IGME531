@@ -8,19 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "D:\\Profiles\\xat7714\\.nuget\\packages\\": {}
+    "C:\\Users\\xande\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\IGMProfile\\Documents\\IGME 531\\repo\\IGME531\\SVG Generator\\SVG Generator.csproj",
+      "projectUniqueName": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\SVG Generator.csproj",
       "projectName": "SVG Generator",
-      "projectPath": "Z:\\IGMProfile\\Documents\\IGME 531\\repo\\IGME531\\SVG Generator\\SVG Generator.csproj",
-      "packagesPath": "D:\\Profiles\\xat7714\\.nuget\\packages\\",
-      "outputPath": "Z:\\IGMProfile\\Documents\\IGME 531\\repo\\IGME531\\SVG Generator\\obj\\",
+      "projectPath": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\SVG Generator.csproj",
+      "packagesPath": "C:\\Users\\xande\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xande\\Desktop\\RIT\\2024 Spring\\IGME 531\\repo\\SVG Generator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "Z:\\IGMProfile\\AppData\\NuGet\\NuGet.Config",
+        "C:\\Users\\xande\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

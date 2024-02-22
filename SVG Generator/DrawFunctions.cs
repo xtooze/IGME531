@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SVGGenerator
+namespace SVG_Generator
 {
     public class DrawFunctions
     {
