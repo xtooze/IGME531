@@ -81,11 +81,13 @@
         const demo = (parameters) => {
             let shapeList = [];
             
-            let cuber = cube({ size: 50 })
-            cuber = colorize(colorNameToRgb('black'), cuber)
-            shapeList.push(cuber);
+            // let cuber = cube({ size: 50 })
+            // cuber = colorize(colorNameToRgb('black'), cuber)
+            // shapeList.push(cuber);
             
             shapeList = shapeList.concat(cubesALot(50, [0, 0, 0]))
+
+            //shapeList = shapeList.slice(1);
 
             return shapeList;
         }
