@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo Application</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #render {
+            width: 90vmin;
+            height: 90vmin;
+            margin: auto;
+            outline: 1px solid black;
+            
+        }
+
+        div:has(#render) {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            max-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {         
+            font-size: 1.25em;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</code_to_rewrite>
+</head>
+
+<body>
+    <script src="https://unpkg.com/@jscad/modeling" id="MODELING"></script>
+    <script src="https://unpkg.com/@jscad/regl-renderer"></script>
+
+    <div>
+        <div id="render"></div>
+    </div>
+
+    <script type="module" language="javascript">
+        import { render } from './render.js';
+
+        const { booleans, colors, primitives, transforms } = jscadModeling // modeling comes from the included MODELING library
+
+        const { intersect, subtract, union } = booleans
+        const { colorize, colorNameToRgb } = colors
+        const { cube, sphere } = primitives
+
+        const cubesALot = (size, position) => {
+            let shapeList = [];
+            
+            let cuber = cube({ size: size/2})
+            shapeList.push(transforms.translate([position[0] + size * 3/4, position[1], position[2]], colorize(colorNameToRgb('red'), cuber))); 
+            shapeList.push(transforms.translate([position[0] - size * 3/4, position[1], position[2]], colorize(colorNameToRgb('green'), cuber))); 
+            shapeList.push(transforms.translate([position[0], position[1] + size * 3/4, position[2]], colorize(colorNameToRgb('orange'), cuber))); 
+            shapeList.push(transforms.translate([position[0], position[1] - size * 3/4, position[2]], colorize(colorNameToRgb('blue'), cuber))); 
+            shapeList.push(transforms.translate([position[0], position[1], position[2] + size * 3/4], colorize(colorNameToRgb('yellow'), cuber))); 
+            shapeList.push(transforms.translate([position[0], position[1], position[2] - size * 3/4], colorize(colorNameToRgb('purple'), cuber))); 
+
+            if (size/2 > 4)
+            {
+                shapeList = shapeList.concat(cubesALot(size/2, [position[0] + size * 3/4, position[1], position[2]]));
+                shapeList = shapeList.concat(cubesALot(size/2, [position[0] - size * 3/4, position[1], position[2]]));
+                shapeList = shapeList.concat(cubesALot(size/2, [position[0], position[1] + size * 3/4, position[2]]));
+                shapeList = shapeList.concat(cubesALot(size/2, [position[0], position[1] - size * 3/4, position[2]]));
+                shapeList = shapeList.concat(cubesALot(size/2, [position[0], position[1], position[2] + size * 3/4]));
+                shapeList = shapeList.concat(cubesALot(size/2, [position[0], position[1], position[2] - size * 3/4]));
+            }
+
+            return shapeList;
+        }
+
+        const demo = (parameters) => {
+            let shapeList = [];
+            
+            let cuber = cube({ size: 50 })
+            cuber = colorize(colorNameToRgb('black'), cuber)
+            shapeList.push(cuber);
+            
+            shapeList = shapeList.concat(cubesALot(50, [0, 0, 0]))
+
+            return shapeList;
+        }
+
+        render(document.getElementById("render"), demo({ size: 300 }))
+
+        
+    </script>
+</body>
+
+</html>
